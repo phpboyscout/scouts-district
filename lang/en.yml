@@ -1,0 +1,67 @@
+en:
+  ScoutDistrict:
+    Enum:
+      NONE: "none"
+      CUBS: "Cubs"
+      BEAVERS: "Beavers"
+      SCOUTS: "Scouts"
+      EXPLORERS: "Explorers"
+      NETWORK: "Network"
+      SECTIONMEETING: "Section Meeting"
+      LEADERSMEETING: "Leaders Meeting"
+      ACTIVITY: "Activity"
+      FUNDRAISING: "Fundraising"
+      COMMITTEE: "Committee"
+      CAMP: "Camp"
+      GROUP: "Group"
+      DISTRICT: "District"
+      TRAINING: "Training"
+      OTHER: "Other"
+    Admin:
+      GROUPMANAGER: "Scout Group Manager"
+      GROUPMANAGER_HELP: "Enable ability to manage Scout Groups"
+      DISTRICTADMIN: "Scout District Admin"
+      DISTRICTADMIN_HELP: "Enable ability to Administer District"
+      PERMISSIONS_CATEGORY: "Scout District"
+    Events:
+      TYPE: "Event Type"
+      TYPE_HELP: "What type of event is it"
+      SECTION: "Section"
+      SECTION_HELP: "Which section does this event apply to"
+      LOCATION: "Event Location"
+      LOCATION_HELP: "Where is the event being held"
+      LATITUDE: "Latitude"
+      LATITUDE_HELP: "Latitude of event Location"
+      LONGITUDE: "Longitude"
+      LONGITUDE_HELP: "Longitude of event Location"
+      BOOKINGDETAILS: "Booking Details"
+      BOOKINGDETAILS_HELP: "Details of how to book a place for the Event"
+      BOOKINGURL: "Booking URL"
+      BOOKINGURL_HELP: "The URL of an external site to book a place"
+      THUMBNAIL: "Thumbnail"
+      THUMBNAIL_HELP: "A small image for displaying in listing/aggregated content"
+      IMAGE: "Image"
+      IMAGE_HELP: "A Larger image for displaying in event header"
+    Groups:
+      SCOUTDISTRICTADMIN: "Scout District Admin"
+      SCOUTGROUPMANAGER: "Scout Group Manager"
+    Config:
+      DISTRICTLOGO: 'District Logo'
+    Homepage:
+      FirstTagLine: 'First Line of Header'
+      SecondTagLine: 'Second Line of Header'
+      TagLinkText: 'Text to show on Header Button'
+      TagLink: 'Where should Header Button link to'
+  ScoutGroup:
+    LEADERS: "Leaders"
+    NECKER: "Neckerchief"
+    TWITTERUSER: "Twitter User"
+    FACEBOOKPAGE: "Facebook Page"
+    GOOGLEPAGE: "GOOGLE Page"
+    ADDRESS1: "Address 1"
+    ADDRESS2: "Address 2"
+    ADDRESS3: "Address 3"
+    TOWN: "Town/City"
+    POSTCODE: "Post Code"
+    PHONE: "Phone #"
+    EMAILADDRESS: "Email Address"

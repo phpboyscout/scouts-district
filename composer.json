@@ -1,0 +1,15 @@
+{
+	"name": "phpboyscout/scouts-district",
+	"description": "UK Scouting District Website Module",
+	"type": "silverstripe-module",
+	"require": {
+		"silverstripe/blog": "3.*",
+        "silverstripe/widgets": "3.*",
+        "silverstripe/userforms": "3.*",
+        "silverstripe/event-calendar" : "*",
+        "silverstripe/html5" : "*",
+        "zucchi/blogaggregator" : "*",
+        "zucchi/geotags": "*",
+        "zucchi/metatags": "*"
+	}
+}

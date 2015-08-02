@@ -1,0 +1,27 @@
+---
+Name: extensions
+---
+SiteConfig:
+  extensions:
+    - ScoutDistrictConfigExtension
+Member:
+  extensions:
+    - ScoutGroupLeaderExtension
+BlogTree:
+  extensions:
+    - WidgetPageExtension
+BlogEntry:
+  extensions:
+    - WidgetPageExtension
+ScoutGroup:
+  extensions:
+    - GeoTagsExtension
+CalendarEvent:
+  extensions:
+    - ScoutCalenderEventExtension
+Calendar_Controller:
+  extensions:
+    - ScoutCalenderExtension
+ExternalBlogEntry_Controller:
+  extensions:
+    - ExternalContentExtension
