@@ -1,6 +1,6 @@
 {
-	"name": "phpboyscout/scouts-district",
-	"description": "UK Scouting District Website Module",
+	"name": "phpboyscout/silverstripe-scouts",
+	"description": "UK Scouting Website Module",
 	"type": "silverstripe-module",
 	"require": {
 		"silverstripe/blog": "3.*",
