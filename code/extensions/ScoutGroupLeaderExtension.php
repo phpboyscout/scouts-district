@@ -14,21 +14,22 @@
  *
  * @author Matt Cockayne <matt@zucchi.co.uk>
  */
-class ScoutGroupLeaderExtension extends DataExtension {
+class ScoutGroupLeaderExtension extends DataExtension
+{
 
-	private static $db = array(
+    private static $db = array(
         'Nickname' => 'varchar',
         'SortOrder' => 'Int',
         'Biography' => 'HTMLText',
 
-	);
+    );
 
     public static $default_sort='SortOrder';
 
-	private static $has_one = array(
+    private static $has_one = array(
         'Avatar' => 'Image',
         'ScoutRole' => 'ScoutRole',
-	);
+    );
 
     private static $many_many = array(
         'ScoutGroups' => 'ScoutGroup',
@@ -45,10 +46,9 @@ class ScoutGroupLeaderExtension extends DataExtension {
     public function requireDefaultRecords()
     {
         $root = rtrim($_SERVER['DOCUMENT_ROOT'], '/');
-        if (!is_dir( $root . '/assets/member/avatar')) {
+        if (!is_dir($root . '/assets/member/avatar')) {
             mkdir($root . '/assets/member/avatar', 0775, true);
             DB::alteration_message('Created Members Avatar Folder', 'created');
         }
-
     }
 }

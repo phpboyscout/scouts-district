@@ -34,7 +34,8 @@ class ScoutGroupHolder extends Page implements PermissionProvider
      * @param null $member
      * @return bool
      */
-    public function canAddChildren($member = null) {
+    public function canAddChildren($member = null)
+    {
         return $this->checkCanManage($member, __FUNCTION__);
     }
 
@@ -42,7 +43,8 @@ class ScoutGroupHolder extends Page implements PermissionProvider
      * @param null $member
      * @return bool
      */
-    public function canCreate($member = null) {
+    public function canCreate($member = null)
+    {
         return $this->checkCanManage($member, __FUNCTION__);
     }
 
@@ -50,7 +52,8 @@ class ScoutGroupHolder extends Page implements PermissionProvider
      * @param null $member
      * @return bool
      */
-    public function canEdit($member = null) {
+    public function canEdit($member = null)
+    {
         return $this->checkCanManage($member, __FUNCTION__);
     }
 
@@ -58,7 +61,8 @@ class ScoutGroupHolder extends Page implements PermissionProvider
      * @param null $member
      * @return bool
      */
-    public function canDelete($member = null) {
+    public function canDelete($member = null)
+    {
         return $this->checkCanManage($member, __FUNCTION__);
     }
 
@@ -66,7 +70,8 @@ class ScoutGroupHolder extends Page implements PermissionProvider
      * @param null $member
      * @return bool
      */
-    public function canPublish($member = null) {
+    public function canPublish($member = null)
+    {
         return $this->checkCanManage($member, __FUNCTION__);
     }
 
@@ -74,7 +79,8 @@ class ScoutGroupHolder extends Page implements PermissionProvider
      * @param null $member
      * @return bool|null
      */
-    public function canDeleteFromLive($member = null) {
+    public function canDeleteFromLive($member = null)
+    {
         return $this->checkCanManage($member, __FUNCTION__);
     }
 
@@ -86,7 +92,8 @@ class ScoutGroupHolder extends Page implements PermissionProvider
      * @param $method
      * @return bool
      */
-    protected function checkCanManage($member, $method) {
+    protected function checkCanManage($member, $method)
+    {
         $canDo = parent::$method($member);
         $canManage = Permission::check(ScoutDistrictPermissions::$district_admin);
 
@@ -99,20 +106,20 @@ class ScoutGroupHolder extends Page implements PermissionProvider
         parent::requireDefaultRecords();
 
         if ($this->config()->create_default_pages) {
-           $groupHolder = DataObject::get_one('ScoutGroupHolder');
-           if (!$groupHolder) {
-               $groupHolder = new ScoutGroupHolder();
-               $groupHolder->Title = "Groups";
-               $groupHolder->URLSegment = 'groups';
-               $groupHolder->Status = 'Published';
-               $groupHolder->write();
-               $groupHolder->publish('Stage', 'Live');
-               DB::alteration_message('Scout Group Holder page created', 'created');
-           }
+            $groupHolder = DataObject::get_one('ScoutGroupHolder');
+            if (!$groupHolder) {
+                $groupHolder = new ScoutGroupHolder();
+                $groupHolder->Title = "Groups";
+                $groupHolder->URLSegment = 'groups';
+                $groupHolder->Status = 'Published';
+                $groupHolder->write();
+                $groupHolder->publish('Stage', 'Live');
+                DB::alteration_message('Scout Group Holder page created', 'created');
+            }
         }
 
         $districtAdmin = DataObject::get_one('Group', "Code = 'scout-district-admin'");
-        if(!$districtAdmin) {
+        if (!$districtAdmin) {
             $districtAdmin = new Group();
             $districtAdmin->Code = 'scout-district-admin';
             $districtAdmin->Title = _t('ScoutDistrict.Groups.SCOUTDISTRICTADMIN', 'Scout District Admin');
@@ -121,7 +128,7 @@ class ScoutGroupHolder extends Page implements PermissionProvider
             DB::alteration_message('Scout District Admin group created', 'created');
         }
         $groupManager = DataObject::get_one('Group', "Code = 'scout-group-manager'");
-        if(!$groupManager) {
+        if (!$groupManager) {
             $groupManager = new Group();
             $groupManager->Code = 'scout-group-manager';
             $groupManager->Title = _t('ScoutDistrict.Groups.SCOUTGROUPMANAGER', 'Scout Group Manager');
@@ -131,5 +138,4 @@ class ScoutGroupHolder extends Page implements PermissionProvider
             DB::alteration_message('Scout Group Manager group created', 'created');
         }
     }
-
-} 
+}

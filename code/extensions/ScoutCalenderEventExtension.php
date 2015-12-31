@@ -14,9 +14,10 @@
  *
  * @author Matt Cockayne <matt@zucchi.co.uk>
  */
-class ScoutCalenderEventExtension extends DataExtension {
+class ScoutCalenderEventExtension extends DataExtension
+{
 
-	private static $db = array(
+    private static $db = array(
         'EventType' => 'Varchar(255)',
         'EventSection' => 'Int',
         'EventLocation' => 'Text',
@@ -24,7 +25,7 @@ class ScoutCalenderEventExtension extends DataExtension {
         'EventLongitude' => 'Varchar(15)',
         'EventBookingDetails' => 'HTMLText',
         'EventBookingURL' => 'Varchar(255)',
-	);
+    );
 
     private static $has_one = array(
         'ThumbnailImage' => 'Image',
@@ -38,16 +39,16 @@ class ScoutCalenderEventExtension extends DataExtension {
     public function updateCMSFields(FieldList $fields)
     {
         $type = new DropdownField('EventType', _t('ScoutDistrict.Events.TYPE', 'Type'), array(
-            'section-meeting' => _t('ScoutDistrict.Enum.SECTIONMEETING','Section Meeting'),
-            'leaders-meeting' => _t('ScoutDistrict.Enum.LEADERSMEETING','Leaders Meeting'),
-            'activity' => _t('ScoutDistrict.Enum.ACTIVITY','Activity'),
-            'fundraising' => _t('ScoutDistrict.Enum.FUNDRAISING','Fundraising'),
-            'committee' => _t('ScoutDistrict.Enum.COMMITTEE','Committee'),
-            'camp' => _t('ScoutDistrict.Enum.CAMP','Camp'),
-            'group' => _t('ScoutDistrict.Enum.GROUP','Group'),
-            'district' => _t('ScoutDistrict.Enum.DISTRICT','District'),
-            'training' => _t('ScoutDistrict.Enum.TRAINING','Training'),
-            'other' => _t('ScoutDistrict.Enum.OTHER','Other'),
+            'section-meeting' => _t('ScoutDistrict.Enum.SECTIONMEETING', 'Section Meeting'),
+            'leaders-meeting' => _t('ScoutDistrict.Enum.LEADERSMEETING', 'Leaders Meeting'),
+            'activity' => _t('ScoutDistrict.Enum.ACTIVITY', 'Activity'),
+            'fundraising' => _t('ScoutDistrict.Enum.FUNDRAISING', 'Fundraising'),
+            'committee' => _t('ScoutDistrict.Enum.COMMITTEE', 'Committee'),
+            'camp' => _t('ScoutDistrict.Enum.CAMP', 'Camp'),
+            'group' => _t('ScoutDistrict.Enum.GROUP', 'Group'),
+            'district' => _t('ScoutDistrict.Enum.DISTRICT', 'District'),
+            'training' => _t('ScoutDistrict.Enum.TRAINING', 'Training'),
+            'other' => _t('ScoutDistrict.Enum.OTHER', 'Other'),
         ));
         $type->setRightTitle(_t(
             'ScoutDistrict.Events.TYPE_HELP',
@@ -72,7 +73,7 @@ class ScoutCalenderEventExtension extends DataExtension {
             'Longitude of event Location'
         ))->addExtraClass('help');
 
-        $bookingDetails = new TextareaField('EventBookingDetails',_t('ScoutDistrict.Events.BOOKINGDETAILS', 'Booking Details'));
+        $bookingDetails = new TextareaField('EventBookingDetails', _t('ScoutDistrict.Events.BOOKINGDETAILS', 'Booking Details'));
         $bookingDetails->setRightTitle(_t(
             'ScoutDistrict.Events.BOOKINGDETAILS_HELP',
             'Details of how to book a place for the Event'

@@ -47,4 +47,4 @@ class ScoutSection_Controller extends Page_Controller
         }
         return $label;
     }
-} 
+}
