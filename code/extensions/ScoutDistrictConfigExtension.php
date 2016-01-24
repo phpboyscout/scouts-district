@@ -14,13 +14,14 @@
  *
  * @author Matt Cockayne <matt@zucchi.co.uk>
  */
-class ScoutDistrictConfigExtension extends DataExtension {
+class ScoutDistrictConfigExtension extends DataExtension
+{
 
-	private static $db = array();
+    private static $db = array();
 
-	private static $has_one = array(
+    private static $has_one = array(
         'DistrictLogo' => 'Image',
-	);
+    );
 
     public function updateCMSFields(FieldList $fields)
     {

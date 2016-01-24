@@ -58,5 +58,4 @@ class ScoutRole extends DataObject
             }
         }
     }
-
 }

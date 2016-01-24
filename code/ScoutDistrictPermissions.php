@@ -37,4 +37,4 @@ class ScoutDistrictPermissions implements PermissionProvider
             )
         );
     }
-} 
+}

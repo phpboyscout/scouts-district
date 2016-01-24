@@ -16,5 +16,4 @@
  */
 class ScoutGroup_Controller extends Page_Controller
 {
-
-} 
+}

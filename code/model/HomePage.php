@@ -142,12 +142,9 @@ class HomePage extends Page
     public function requireDefaultRecords()
     {
         $root = rtrim($_SERVER['DOCUMENT_ROOT'], '/');
-        if (!is_dir( $root . '/assets/homepage')) {
+        if (!is_dir($root . '/assets/homepage')) {
             mkdir($root . '/assets/homepage', 0775, true);
             DB::alteration_message('Created Homepage Assets Folder', 'created');
         }
-
     }
-
-
 }

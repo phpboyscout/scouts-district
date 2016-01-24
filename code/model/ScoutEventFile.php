@@ -28,7 +28,8 @@ class ScoutEventFile extends File
      *
      * @return string
      */
-    public function forTemplate() {
+    public function forTemplate()
+    {
         return $this->getTag();
     }
 
@@ -38,19 +39,19 @@ class ScoutEventFile extends File
      *
      * @return string
      */
-    public function getTag() {
-        if(file_exists(Director::baseFolder() . '/' . $this->Filename)) {
+    public function getTag()
+    {
+        if (file_exists(Director::baseFolder() . '/' . $this->Filename)) {
             $url = $this->getURL();
             $title = ($this->Title) ? $this->Title : $this->Filename;
-            if($this->Title) {
+            if ($this->Title) {
                 $title = Convert::raw2att($this->Title);
             } else {
-                if(preg_match("/([^\/]*)\.[a-zA-Z0-9]{1,6}$/", $title, $matches)) {
+                if (preg_match("/([^\/]*)\.[a-zA-Z0-9]{1,6}$/", $title, $matches)) {
                     $title = Convert::raw2att($matches[1]);
                 }
             }
             return "<a hret=\"$url\" title=\"$title\" >$title</a>";
         }
     }
-
 }

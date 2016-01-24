@@ -46,8 +46,8 @@ class HomePage_Controller extends Page_Controller
      *
      * @return bool|Event
      */
-    public function UpcomingEvent() {
-
+    public function UpcomingEvent()
+    {
         if ($id = $this->dataRecord->Calendar) {
             if ($calendar =DataObject::get_by_id('Calendar', $id)) {
                 $entries =  $calendar->UpcomingEvents(2);
@@ -56,7 +56,6 @@ class HomePage_Controller extends Page_Controller
         }
 
         return false;
-
     }
 
     /**
@@ -65,8 +64,8 @@ class HomePage_Controller extends Page_Controller
      *
      * @return bool|ArrayList
      */
-    public function CalendarEvents() {
-
+    public function CalendarEvents()
+    {
         if ($id = $this->dataRecord->Calendar) {
             if ($calendar = DataObject::get_by_id('Calendar', $id)) {
                 $entries =  $calendar->UpcomingEvents(5);

@@ -32,8 +32,8 @@ class ScoutGroupLeaders extends Page
 
     private static $has_one = array();
 
-    public function getCMSFields() {
-
+    public function getCMSFields()
+    {
         $fields = parent::getCMSFields();
 
         $leadersGridConfig = GridFieldConfig_RelationEditor::create();

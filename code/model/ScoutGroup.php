@@ -61,8 +61,8 @@ class ScoutGroup extends Page
         'Leaders' => array('Section' => 'Int')
     );
 
-    public function getCMSFields() {
-
+    public function getCMSFields()
+    {
         $fields = parent::getCMSFields();
 
         $badge = new UploadField('Badge', _t('ScoutGroup.BADGE', 'Badge'));
@@ -115,7 +115,7 @@ class ScoutGroup extends Page
         if (!$this->ID) {
             $this->isInsert = true;
         }
-       parent::onBeforeWrite();
+        parent::onBeforeWrite();
     }
 
     public function onAfterWrite()
@@ -151,7 +151,8 @@ class ScoutGroup extends Page
      * @param null $member
      * @return bool
      */
-    public function canAddChildren($member = null) {
+    public function canAddChildren($member = null)
+    {
         return $this->checkCanManage($member, __FUNCTION__);
     }
 
@@ -159,7 +160,8 @@ class ScoutGroup extends Page
      * @param null $member
      * @return bool
      */
-    public function canCreate($member = null) {
+    public function canCreate($member = null)
+    {
         $canDo = parent::canCreate($member);
         $canAdmin = Permission::check(ScoutDistrictPermissions::$district_admin);
 
@@ -170,7 +172,8 @@ class ScoutGroup extends Page
      * @param null $member
      * @return bool
      */
-    public function canEdit($member = null) {
+    public function canEdit($member = null)
+    {
         return $this->checkCanManage($member, __FUNCTION__);
     }
 
@@ -178,7 +181,8 @@ class ScoutGroup extends Page
      * @param null $member
      * @return bool
      */
-    public function canDelete($member = null) {
+    public function canDelete($member = null)
+    {
         return $this->checkCanManage($member, __FUNCTION__);
     }
 
@@ -186,7 +190,8 @@ class ScoutGroup extends Page
      * @param null $member
      * @return bool
      */
-    public function canPublish($member = null) {
+    public function canPublish($member = null)
+    {
         return $this->checkCanManage($member, __FUNCTION__);
     }
 
@@ -194,7 +199,8 @@ class ScoutGroup extends Page
      * @param null $member
      * @return bool|null
      */
-    public function canDeleteFromLive($member = null) {
+    public function canDeleteFromLive($member = null)
+    {
         return $this->checkCanManage($member, __FUNCTION__);
     }
 
@@ -206,7 +212,8 @@ class ScoutGroup extends Page
      * @param $method
      * @return bool
      */
-    protected function checkCanManage($member, $method) {
+    protected function checkCanManage($member, $method)
+    {
         $canDo = parent::$method($member);
         $canAdmin = Permission::check(ScoutDistrictPermissions::$district_admin);
         $canManage = Permission::check(ScoutDistrictPermissions::$group_manager);
@@ -230,5 +237,4 @@ class ScoutGroup extends Page
             }
         }
     }
-
 }

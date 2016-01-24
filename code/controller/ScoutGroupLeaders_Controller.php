@@ -22,4 +22,4 @@ class ScoutGroupLeaders_Controller extends Page_Controller
 
         return $leaders;
     }
-} 
+}

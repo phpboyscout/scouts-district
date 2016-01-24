@@ -20,7 +20,6 @@ class ExternalContentExtension extends DataExtension
     {
         $page = $this->getOwner();
         if ($page && $page->ExternalLink) {
-
             $tags .= "<link rel=\"canonical\" href=\"{$page->ExternalLink}\" />\n";
         }
         return $tags;
